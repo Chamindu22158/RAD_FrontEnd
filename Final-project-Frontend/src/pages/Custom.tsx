@@ -28,13 +28,18 @@ const Custom: React.FC = () => {
     };
 
     return (
-        <div className="p-6 max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">🎨 Custom Mixes</h2>
-            <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Search custom mixes by name, description, or ingredients..." />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                {products.map((p, index) => <ProductCard key={p._id || `product-${index}`} product={p} onClick={setSelected} />)}
+        <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
+            <div className="p-6 max-w-7xl mx-auto">
+                <div className="mb-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white shadow-xl">
+                    <h2 className="text-4xl font-bold mb-2">🥠 Appetizers</h2>
+                    <p className="text-green-100">Start your meal with our delicious appetizer selection</p>
+                </div>
+                <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Search appetizers by name, description, or ingredients..." />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                    {products.map((p, index) => <ProductCard key={p._id || `product-${index}`} product={p} onClick={setSelected} />)}
+                </div>
+                {selected && <ProductModal product={selected} onClose={()=>setSelected(null)} onBuy={buy} onSelectAlcohol={setSelectedAlcohol} />}
             </div>
-            {selected && <ProductModal product={selected} onClose={()=>setSelected(null)} onBuy={buy} onSelectAlcohol={setSelectedAlcohol} />}
         </div>
     );
 };

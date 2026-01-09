@@ -21,16 +21,73 @@ const Signup: React.FC = () => {
     };
 
     return (
-        <div className="p-6 max-w-md mx-auto mt-8">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl border-4 border-purple-500/30 p-8">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 text-center">Signup</h2>
-                {err && <div className="bg-red-900/50 text-red-300 p-3 mb-4 rounded-lg border-2 border-red-500/50">{err}</div>}
-                <form onSubmit={submit} className="flex flex-col gap-4">
-                    <input value={username} onChange={e=>setUsername(e.target.value)} placeholder="Username" className="border-2 border-purple-500/50 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-700 text-white placeholder-gray-400" />
-                    <input value={email} onChange={e=>setEmail(e.target.value)} placeholder="Email" className="border-2 border-purple-500/50 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-700 text-white placeholder-gray-400" />
-                    <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Password" className="border-2 border-purple-500/50 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-700 text-white placeholder-gray-400" />
-                    <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg">Signup</button>
-                </form>
+        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 flex items-center justify-center p-4">
+            <div className="w-full max-w-md">
+                <div className="bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden">
+                    {/* Header */}
+                    <div className="bg-gradient-to-r from-amber-600 to-orange-600 px-8 py-12 text-center">
+                        <h1 className="text-4xl font-bold text-white mb-2">🍽️</h1>
+                        <h2 className="text-3xl font-bold text-white mb-2">Gourmet Bistro</h2>
+                        <p className="text-amber-100 text-sm">Restaurant Management</p>
+                    </div>
+                    
+                    {/* Form */}
+                    <div className="px-8 py-8">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Create Account</h3>
+                        {err && (
+                            <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+                                <p className="font-semibold text-sm">{err}</p>
+                            </div>
+                        )}
+                        <form onSubmit={submit} className="space-y-5">
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Username</label>
+                                <input 
+                                    type="text"
+                                    value={username} 
+                                    onChange={e=>setUsername(e.target.value)} 
+                                    placeholder="Your username"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-gray-50 text-gray-800 placeholder-gray-400 transition-all duration-200" 
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                                <input 
+                                    type="email"
+                                    value={email} 
+                                    onChange={e=>setEmail(e.target.value)} 
+                                    placeholder="you@restaurant.com"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-gray-50 text-gray-800 placeholder-gray-400 transition-all duration-200" 
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                                <input 
+                                    type="password" 
+                                    value={password} 
+                                    onChange={e=>setPassword(e.target.value)} 
+                                    placeholder="••••••••"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-gray-50 text-gray-800 placeholder-gray-400 transition-all duration-200" 
+                                />
+                            </div>
+                            <button 
+                                type="submit"
+                                className="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-lg font-bold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl mt-6"
+                            >
+                                Create Account
+                            </button>
+                        </form>
+                        <p className="text-center text-gray-600 text-sm mt-6">
+                            Already have an account? <a href="/login" className="text-amber-600 font-semibold hover:text-amber-700">Sign in here</a>
+                        </p>
+                    </div>
+                </div>
+                
+                {/* Footer */}
+                <p className="text-center text-gray-600 text-xs mt-6">Secure registration • Your data is protected</p>
             </div>
         </div>
     );

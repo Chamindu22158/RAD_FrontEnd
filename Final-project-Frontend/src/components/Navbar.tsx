@@ -12,32 +12,79 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-gray-900 via-purple-900 to-pink-900 text-white px-4 py-4 flex justify-between items-center shadow-2xl border-b-4 border-gradient-to-r from-purple-500 to-pink-500 backdrop-blur-sm">
-            <div className="flex items-center gap-6">
-                <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-pink-300 transition-all duration-300">
-                    🥤 Juice Bar
-                </Link>
-                {user && (
-                    <>
-                        <Link to="/juice" className="hover:text-purple-400 transition-colors font-medium hover:scale-105 transform duration-200">Juice</Link>
-                        <Link to="/cocktail" className="hover:text-pink-400 transition-colors font-medium hover:scale-105 transform duration-200">Cocktail</Link>
-                        <Link to="/custom" className="hover:text-cyan-400 transition-colors font-medium hover:scale-105 transform duration-200">Custom</Link>
-                    </>
-                )}
-            </div>
-            <div className="flex items-center gap-3">
-                {user ? (
-                    <>
-                        <span className="hidden sm:inline bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">{user.username}</span>
-                        {user.role === 'admin' && <Link to="/admin" className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg">Admin</Link>}
-                        <button onClick={handleLogout} className="px-4 py-1 bg-gradient-to-r from-red-600 to-red-700 rounded-lg font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg">Logout</button>
-                    </>
-                ) : (
-                    <>
-                        <Link to="/login" className="px-4 py-1 border-2 border-purple-400 rounded-lg font-semibold hover:bg-purple-400 hover:text-gray-900 transition-all duration-300">Login</Link>
-                        <Link to="/signup" className="px-4 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg">Signup</Link>
-                    </>
-                )}
+        <nav className="bg-white shadow-lg border-b-2 border-amber-100 sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+                {/* Logo & Brand */}
+                <div className="flex items-center gap-8">
+                    <Link to="/" className="flex items-center gap-2">
+                        <span className="text-3xl">🍽️</span>
+                        <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent hover:from-amber-700 hover:to-orange-700 transition-all duration-300">
+                            Gourmet Bistro
+                        </span>
+                    </Link>
+
+                    {/* Navigation Links */}
+                    {user && (
+                        <div className="hidden md:flex items-center gap-8">
+                            <Link 
+                                to="/juice" 
+                                className="text-gray-700 font-medium hover:text-amber-600 hover:border-b-2 hover:border-amber-600 pb-1 transition-all duration-200"
+                            >
+                                Main Course
+                            </Link>
+                            <Link 
+                                to="/cocktail" 
+                                className="text-gray-700 font-medium hover:text-amber-600 hover:border-b-2 hover:border-amber-600 pb-1 transition-all duration-200"
+                            >
+                                Beverages
+                            </Link>
+                            <Link 
+                                to="/custom" 
+                                className="text-gray-700 font-medium hover:text-amber-600 hover:border-b-2 hover:border-amber-600 pb-1 transition-all duration-200"
+                            >
+                                Appetizers
+                            </Link>
+                        </div>
+                    )}
+                </div>
+
+                {/* Right Section - User & Actions */}
+                <div className="flex items-center gap-4">
+                    {user ? (
+                        <>
+                            <span className="hidden sm:inline text-gray-700 font-medium">👤 {user.username}</span>
+                            {user.role === 'admin' && (
+                                <Link 
+                                    to="/admin" 
+                                    className="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                                >
+                                    ⚙️ Admin
+                                </Link>
+                            )}
+                            <button 
+                                onClick={handleLogout} 
+                                className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-md hover:shadow-lg"
+                            >
+                                Logout
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link 
+                                to="/login" 
+                                className="px-4 py-2 border-2 border-amber-600 text-amber-600 rounded-lg font-semibold hover:bg-amber-50 transition-all duration-300"
+                            >
+                                Login
+                            </Link>
+                            <Link 
+                                to="/signup" 
+                                className="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                            >
+                                Sign Up
+                            </Link>
+                        </>
+                    )}
+                </div>
             </div>
         </nav>
     );

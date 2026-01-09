@@ -30,20 +30,79 @@ const Payment: React.FC = () => {
     };
 
     return (
-        <div className="p-6 max-w-md mx-auto mt-8">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl border-4 border-purple-500/30 p-8">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">Payment</h2>
-                <p className="text-lg text-gray-300 mb-2">Product: <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{product.name}</span></p>
-                {product.price && (
-                    <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Total: ${product.price.toFixed(2)}</p>
-                )}
-                {err && <div className="bg-red-900/50 text-red-300 p-3 mb-4 rounded-lg border-2 border-red-500/50">{err}</div>}
-                <form onSubmit={submit} className="flex flex-col gap-4">
-                    <input value={card} onChange={e=>setCard(e.target.value)} placeholder="Card number" className="border-2 border-purple-500/50 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-700 text-white placeholder-gray-400" />
-                    <input value={expiry} onChange={e=>setExpiry(e.target.value)} placeholder="MM/YY" className="border-2 border-purple-500/50 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-700 text-white placeholder-gray-400" />
-                    <input value={cvv} onChange={e=>setCvv(e.target.value)} placeholder="CVV" className="border-2 border-purple-500/50 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-700 text-white placeholder-gray-400" />
-                    <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg">Pay Now</button>
-                </form>
+        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 flex items-center justify-center p-4">
+            <div className="w-full max-w-md">
+                <div className="bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden">
+                    {/* Header */}
+                    <div className="bg-gradient-to-r from-amber-600 to-orange-600 px-8 py-8 text-center">
+                        <h2 className="text-3xl font-bold text-white mb-2">💳 Payment</h2>
+                        <p className="text-amber-100 text-sm">Complete your order</p>
+                    </div>
+                    
+                    {/* Order Details */}
+                    <div className="px-8 py-6 bg-amber-50 border-b border-amber-100">
+                        <div className="mb-4">
+                            <p className="text-sm text-gray-600 mb-1">Order Item</p>
+                            <p className="text-lg font-bold text-gray-800">{product.name}</p>
+                        </div>
+                        {product.price && (
+                            <div>
+                                <p className="text-sm text-gray-600 mb-1">Total Amount</p>
+                                <p className="text-3xl font-bold text-amber-600">${product.price.toFixed(2)}</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Payment Form */}
+                    <div className="px-8 py-8">
+                        {err && (
+                            <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+                                <p className="font-semibold text-sm">{err}</p>
+                            </div>
+                        )}
+                        <form onSubmit={submit} className="space-y-5">
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Card Number</label>
+                                <input 
+                                    value={card} 
+                                    onChange={e=>setCard(e.target.value)} 
+                                    placeholder="1234 5678 9012 3456"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400 transition-all duration-200" 
+                                />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Expiry</label>
+                                    <input 
+                                        value={expiry} 
+                                        onChange={e=>setExpiry(e.target.value)} 
+                                        placeholder="MM/YY"
+                                        required
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400 transition-all duration-200" 
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">CVV</label>
+                                    <input 
+                                        value={cvv} 
+                                        onChange={e=>setCvv(e.target.value)} 
+                                        placeholder="123"
+                                        required
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400 transition-all duration-200" 
+                                    />
+                                </div>
+                            </div>
+                            <button 
+                                type="submit"
+                                className="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-lg font-bold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl mt-6"
+                            >
+                                Pay ${product.price?.toFixed(2)}
+                            </button>
+                            <p className="text-center text-gray-600 text-xs">🔒 Secure payment • Your card details are encrypted</p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     );

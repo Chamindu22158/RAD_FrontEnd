@@ -26,34 +26,42 @@ const UserDashboard: React.FC = () => {
     };
 
     return (
-        <div className="p-6 max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">Welcome to Juice Bar</h2>
-                <p className="text-lg text-gray-300">Select a category from the navbar to browse juices, cocktails or custom mixes.</p>
-            </div>
-            
-            {famousProducts.length > 0 && (
-                <div className="mt-8">
-                    <h3 className="text-3xl font-bold mb-6 flex items-center justify-center gap-3 text-white">
-                        <span className="text-purple-400 text-4xl">⭐</span>
-                        <span>Famous Items</span>
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {famousProducts.map((p, index) => (
-                            <ProductCard key={p._id || `famous-${index}`} product={p} onClick={setSelected} />
-                        ))}
-                    </div>
+        <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
+            <div className="p-6 max-w-7xl mx-auto">
+                {/* Welcome Hero */}
+                <div className="mb-12 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-12 text-white shadow-xl text-center">
+                    <h2 className="text-5xl font-bold mb-4">Welcome to Gourmet Bistro</h2>
+                    <p className="text-lg text-amber-100 mb-2">Discover our finest dishes and beverages</p>
+                    <p className="text-amber-100">Select a category from the navbar to browse our main courses, beverages or appetizers.</p>
                 </div>
-            )}
-            
-            {selected && (
-                <ProductModal 
-                    product={selected} 
-                    onClose={() => setSelected(null)} 
-                    onBuy={buy} 
-                    onSelectAlcohol={setSelectedAlcohol} 
-                />
-            )}
+                
+                {/* Featured Items */}
+                {famousProducts.length > 0 && (
+                    <div className="mt-12">
+                        <div className="text-center mb-10">
+                            <h3 className="text-4xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-3">
+                                <span className="text-4xl">⭐</span>
+                                <span>Featured Items</span>
+                            </h3>
+                            <p className="text-gray-600">Customer favorites and chef's recommendations</p>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {famousProducts.map((p, index) => (
+                                <ProductCard key={p._id || `famous-${index}`} product={p} onClick={setSelected} />
+                            ))}
+                        </div>
+                    </div>
+                )}
+                
+                {selected && (
+                    <ProductModal 
+                        product={selected} 
+                        onClose={() => setSelected(null)} 
+                        onBuy={buy} 
+                        onSelectAlcohol={setSelectedAlcohol} 
+                    />
+                )}
+            </div>
         </div>
     );
 };

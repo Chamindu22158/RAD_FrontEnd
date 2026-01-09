@@ -9,18 +9,39 @@ export const ProductCard: React.FC<Props> = ({ product, onClick }) => {
     };
     
     return (
-        <div className="bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-500/30 rounded-xl overflow-hidden cursor-pointer shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 hover:border-purple-400/50" onClick={() => onClick(product)}>
-            <img 
-                src={imageError ? 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop' : product.image} 
-                alt={product.name} 
-                className="w-full h-48 object-cover" 
-                onError={handleImageError}
-            />
-            <div className="p-4 bg-gradient-to-b from-gray-800/90 to-purple-900/90 backdrop-blur-sm">
-                <h3 className="font-bold text-lg text-white mb-2">{product.name}</h3>
-                {product.price && (
-                    <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">${product.price.toFixed(2)}</p>
+        <div 
+            className="bg-white rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-amber-100 hover:border-amber-300 group"
+            onClick={() => onClick(product)}
+        >
+            {/* Image Container */}
+            <div className="relative overflow-hidden bg-gray-100 h-48">
+                <img 
+                    src={imageError ? 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400&h=300&fit=crop' : product.image} 
+                    alt={product.name} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    onError={handleImageError}
+                />
+                {product.category === 'juice' && (
+                    <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Main</div>
                 )}
+                {product.category === 'cocktail' && (
+                    <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Beverage</div>
+                )}
+                {product.category === 'custom' && (
+                    <div className="absolute top-3 right-3 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Appetizer</div>
+                )}
+            </div>
+
+            {/* Content */}
+            <div className="p-5">
+                <h3 className="font-bold text-lg text-gray-800 mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">{product.name}</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    {product.price && (
+                        <p className="text-2xl font-bold text-amber-600">${product.price.toFixed(2)}</p>
+                    )}
+                    <span className="text-amber-600 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                </div>
             </div>
         </div>
     );
