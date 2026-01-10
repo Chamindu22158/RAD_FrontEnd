@@ -124,7 +124,7 @@ const AdminProductForm: React.FC<{ onCreated: ()=>void }> = ({ onCreated }) => {
                 </div>
 
                 {/* Featured Item */}
-                <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-lg border border-orange-200">
+                <div className="bg-gradient-to-r from-blue-50 to-blue-50 p-4 rounded-lg border border-blue-200">
                     <label className="flex items-center gap-3 cursor-pointer">
                         <input 
                             type="checkbox" 
@@ -141,7 +141,7 @@ const AdminProductForm: React.FC<{ onCreated: ()=>void }> = ({ onCreated }) => {
             {/* Submit Button */}
             <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-lg font-bold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl mt-8"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white py-3 rounded-lg font-bold hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl mt-8"
             >
                 Create Menu Item
             </button>

@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
                 <div className="flex items-center gap-8">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="text-3xl">🍽️</span>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent hover:from-amber-700 hover:to-orange-700 transition-all duration-300">
+                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-blue-700 transition-all duration-300">
                             Gourmet Bistro
                         </span>
                     </Link>
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
                             {user.role === 'admin' && (
                                 <Link 
                                     to="/admin" 
-                                    className="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg"
                                 >
                                     ⚙️ Admin
                                 </Link>
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
                             </Link>
                             <Link 
                                 to="/signup" 
-                                className="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg"
                             >
                                 Sign Up
                             </Link>

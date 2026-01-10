@@ -10,7 +10,7 @@ export const ProductCard: React.FC<Props> = ({ product, onClick }) => {
     
     return (
         <div 
-            className="bg-white rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-amber-100 hover:border-amber-300 group"
+            className="bg-white rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-violet-100 hover:border-violet-300 group"
             onClick={() => onClick(product)}
         >
             {/* Image Container */}
@@ -22,7 +22,7 @@ export const ProductCard: React.FC<Props> = ({ product, onClick }) => {
                     onError={handleImageError}
                 />
                 {product.category === 'juice' && (
-                    <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Main</div>
+                    <div className="absolute top-3 right-3 bg-violet-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Main</div>
                 )}
                 {product.category === 'cocktail' && (
                     <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Beverage</div>
@@ -34,13 +34,13 @@ export const ProductCard: React.FC<Props> = ({ product, onClick }) => {
 
             {/* Content */}
             <div className="p-5">
-                <h3 className="font-bold text-lg text-gray-800 mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">{product.name}</h3>
+                <h3 className="font-bold text-lg text-gray-800 mb-2 line-clamp-2 group-hover:text-violet-600 transition-colors">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
                 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                     {product.price && (
-                        <p className="text-2xl font-bold text-amber-600">${product.price.toFixed(2)}</p>
+                        <p className="text-2xl font-bold text-violet-600">${product.price.toFixed(2)}</p>
                     )}
-                    <span className="text-amber-600 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                    <span className="text-violet-600 group-hover:translate-x-2 transition-transform duration-300">→</span>
                 </div>
             </div>
         </div>

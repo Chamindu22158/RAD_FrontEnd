@@ -28,11 +28,11 @@ const Juice: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
+        <div className="bg-gradient-to-b from-teal-50 to-white min-h-screen">
             <div className="p-6 max-w-7xl mx-auto">
-                <div className="mb-8 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-white shadow-xl">
+                <div className="mb-8 bg-gradient-to-r from-blue-600 to-blue-600 rounded-2xl p-8 text-white shadow-xl">
                     <h2 className="text-4xl font-bold mb-2">🍽️ Main Courses</h2>
-                    <p className="text-amber-100">Delicious main courses prepared with fresh ingredients</p>
+                    <p className="text-teal-100">Delicious main courses prepared with fresh ingredients</p>
                 </div>
                 <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Search main courses by name, description, or ingredients..." />
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">

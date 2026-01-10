@@ -30,11 +30,11 @@ const Payment: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 flex items-center justify-center p-4">
             <div className="w-full max-w-md">
-                <div className="bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-2xl border border-blue-100 overflow-hidden">
                     {/* Header */}
-                    <div className="bg-gradient-to-r from-amber-600 to-orange-600 px-8 py-8 text-center">
+                    <div className="bg-gradient-to-r from-blue-600 to-blue-600 px-8 py-8 text-center">
                         <h2 className="text-3xl font-bold text-white mb-2">💳 Payment</h2>
                         <p className="text-amber-100 text-sm">Complete your order</p>
                     </div>
@@ -95,7 +95,7 @@ const Payment: React.FC = () => {
                             </div>
                             <button 
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-lg font-bold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl mt-6"
+                                className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white py-3 rounded-lg font-bold hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl mt-6"
                             >
                                 Pay ${product.price?.toFixed(2)}
                             </button>

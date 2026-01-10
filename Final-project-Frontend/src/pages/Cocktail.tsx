@@ -27,7 +27,7 @@ const Cocktail: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
+        <div className="bg-gradient-to-b from-sky-50 to-white min-h-screen">
             <div className="p-6 max-w-7xl mx-auto">
                 <div className="mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white shadow-xl">
                     <h2 className="text-4xl font-bold mb-2">🥤 Beverages</h2>

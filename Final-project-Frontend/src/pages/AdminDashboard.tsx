@@ -73,9 +73,9 @@ const AdminDashboard: React.FC = () => {
 
     return (
         <div className="p-6 max-w-7xl mx-auto">
-            <div className="mb-8 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-white shadow-xl">
+            <div className="mb-8 bg-gradient-to-r from-blue-600 to-blue-600 rounded-2xl p-8 text-white shadow-xl">
                 <h2 className="text-4xl font-bold mb-2">🍽️ Restaurant Management</h2>
-                <p className="text-amber-100 text-lg">Manage your menu items, view orders, and track customer activity</p>
+                <p className="text-teal-100 text-lg">Manage your menu items, view orders, and track customer activity</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
@@ -84,12 +84,12 @@ const AdminDashboard: React.FC = () => {
                 </div>
 
                 <div className="lg:col-span-2 space-y-6">
-                    <section className="bg-white rounded-2xl shadow-xl border border-amber-100 p-6">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-amber-200 pb-4">📋 Menu Items</h3>
+                    <section className="bg-white rounded-2xl shadow-xl border border-teal-100 p-6">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-teal-200 pb-4">📋 Menu Items</h3>
                         <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Search products by name, description, or ingredients..." />
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                             {products.map((p, index) => (
-                                <div key={p.id || `product-${index}`} className="bg-white border border-amber-100 p-5 rounded-xl shadow-lg hover:shadow-xl hover:border-amber-300 transition-all duration-300">
+                                <div key={p.id || `product-${index}`} className="bg-white border border-teal-100 p-5 rounded-xl shadow-lg hover:shadow-xl hover:border-teal-300 transition-all duration-300">
                                     <img 
                                         src={imageErrors.has(p.id) ? 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400&h=300&fit=crop' : p.image} 
                                         alt={p.name} 
@@ -101,12 +101,12 @@ const AdminDashboard: React.FC = () => {
                                             <div>
                                                 <h4 className="font-bold text-gray-800 text-lg">{p.name}</h4>
                                                 <p className="text-sm text-gray-600 capitalize">{p.category === 'juice' ? 'Main Course' : p.category === 'cocktail' ? 'Beverages' : 'Appetizers'}</p>
-                                                {p.isFamous && <span className="text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full font-semibold mt-2 inline-block">⭐ Featured</span>}
+                                                {p.isFamous && <span className="text-xs bg-gradient-to-r from-blue-500 to-blue-500 text-white px-3 py-1 rounded-full font-semibold mt-2 inline-block">⭐ Featured</span>}
                                             </div>
                                             <div className="flex gap-2">
                                                 <button 
                                                     onClick={()=>handleToggleFamous(p.id, p.isFamous || false)} 
-                                                    className={`px-2 py-1 rounded-lg text-sm font-semibold transition-all duration-300 ${p.isFamous ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                                                    className={`px-2 py-1 rounded-lg text-sm font-semibold transition-all duration-300 ${p.isFamous ? 'bg-gradient-to-r from-blue-500 to-blue-500 text-white hover:from-blue-600 hover:to-blue-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
                                                 >
                                                     {p.isFamous ? '⭐' : '☆'}
                                                 </button>
@@ -126,10 +126,10 @@ const AdminDashboard: React.FC = () => {
                                                             handleUpdatePrice(p.id, e.target.value);
                                                         }
                                                     }}
-                                                    className="flex-1 border border-amber-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400"
+                                                    className="flex-1 border border-teal-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400"
                                                     placeholder="0.00"
                                                 />
-                                                <span className="text-lg font-bold text-amber-600 pt-2">${p.price?.toFixed(2) || '0.00'}</span>
+                                                <span className="text-lg font-bold text-teal-600 pt-2">${p.price?.toFixed(2) || '0.00'}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -138,24 +138,24 @@ const AdminDashboard: React.FC = () => {
                         </div>
                     </section>
 
-                    <section className="bg-white rounded-2xl shadow-xl border border-amber-100 p-6">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-amber-200 pb-4">📦 Customer Orders</h3>
+                    <section className="bg-white rounded-2xl shadow-xl border border-teal-100 p-6">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-teal-200 pb-4">📦 Customer Orders</h3>
                         <div className="mt-6 overflow-x-auto">
                             <table className="w-full border-collapse">
-                                <thead className="bg-gradient-to-r from-amber-600 to-orange-600">
+                                <thead className="bg-gradient-to-r from-blue-600 to-blue-600">
                                 <tr>
-                                    <th className="p-4 text-white font-bold text-left border-b-2 border-amber-300">Customer</th>
-                                    <th className="p-4 text-white font-bold text-left border-b-2 border-amber-300">Order Item</th>
-                                    <th className="p-4 text-white font-bold text-left border-b-2 border-amber-300">Amount</th>
-                                    <th className="p-4 text-white font-bold text-left border-b-2 border-amber-300">Date & Time</th>
+                                    <th className="p-4 text-white font-bold text-left border-b-2 border-teal-300">Customer</th>
+                                    <th className="p-4 text-white font-bold text-left border-b-2 border-teal-300">Order Item</th>
+                                    <th className="p-4 text-white font-bold text-left border-b-2 border-teal-300">Amount</th>
+                                    <th className="p-4 text-white font-bold text-left border-b-2 border-teal-300">Date & Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {orders.map((o, index) => (
-                                    <tr key={o._id || `order-${index}`} className="border-t border-gray-200 hover:bg-amber-50 transition-colors duration-200">
+                                    <tr key={o._id || `order-${index}`} className="border-t border-gray-200 hover:bg-teal-50 transition-colors duration-200">
                                         <td className="p-4 text-gray-800">{o.userId?.email}</td>
                                         <td className="p-4 text-gray-800 font-semibold">{o.productId?.name}</td>
-                                        <td className="p-4 text-lg font-bold text-amber-600">${o.totalAmount}</td>
+                                        <td className="p-4 text-lg font-bold text-teal-600">${o.totalAmount}</td>
                                         <td className="p-4 text-gray-700">{new Date(o.createdAt).toLocaleString()}</td>
                                     </tr>
                                 ))}

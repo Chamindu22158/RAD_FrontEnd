@@ -26,13 +26,13 @@ const UserDashboard: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
+        <div className="bg-gradient-to-b from-sky-50 to-white min-h-screen">
             <div className="p-6 max-w-7xl mx-auto">
                 {/* Welcome Hero */}
-                <div className="mb-12 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-12 text-white shadow-xl text-center">
+                <div className="mb-12 bg-gradient-to-r from-blue-600 to-blue-600 rounded-2xl p-12 text-white shadow-xl text-center">
                     <h2 className="text-5xl font-bold mb-4">Welcome to Gourmet Bistro</h2>
-                    <p className="text-lg text-amber-100 mb-2">Discover our finest dishes and beverages</p>
-                    <p className="text-amber-100">Select a category from the navbar to browse our main courses, beverages or appetizers.</p>
+                    <p className="text-lg text-sky-100 mb-2">Discover our finest dishes and beverages</p>
+                    <p className="text-sky-100">Select a category from the navbar to browse our main courses, beverages or appetizers.</p>
                 </div>
                 
                 {/* Featured Items */}

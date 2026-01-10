@@ -7,7 +7,7 @@ const ProductModal: React.FC<Props> = ({ product, onClose, onBuy, onSelectAlcoho
     if (!product) return null;
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md border border-amber-100 overflow-hidden relative">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md border border-violet-100 overflow-hidden relative">
                 <button 
                     onClick={onClose} 
                     className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-700 transition-colors z-10"
@@ -15,10 +15,10 @@ const ProductModal: React.FC<Props> = ({ product, onClose, onBuy, onSelectAlcoho
                     ×
                 </button>
 
-                <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-8 text-white">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-600 p-8 text-white">
                     <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
                     {product.price && (
-                        <p className="text-4xl font-bold text-amber-100">${product.price.toFixed(2)}</p>
+                        <p className="text-4xl font-bold text-violet-100">${product.price.toFixed(2)}</p>
                     )}
                 </div>
 
@@ -27,7 +27,7 @@ const ProductModal: React.FC<Props> = ({ product, onClose, onBuy, onSelectAlcoho
                         <p className="text-gray-700 leading-relaxed">{product.description}</p>
                     </div>
 
-                    <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <div className="bg-violet-50 p-4 rounded-lg border border-violet-200">
                         <h3 className="text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Ingredients</h3>
                         <p className="text-gray-700 text-sm leading-relaxed">{product.ingredients?.join(', ')}</p>
                     </div>
@@ -56,7 +56,7 @@ const ProductModal: React.FC<Props> = ({ product, onClose, onBuy, onSelectAlcoho
                     </button>
                     <button 
                         onClick={onBuy} 
-                        className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                         Order Now
                     </button>

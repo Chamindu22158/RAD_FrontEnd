@@ -7,7 +7,7 @@ const Slip: React.FC = () => {
     if (!order) return <div className="p-4">No order data</div>;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 flex items-center justify-center p-4">
             <div className="w-full max-w-lg">
                 <div className="bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden">
                     {/* Header */}
@@ -32,7 +32,7 @@ const Slip: React.FC = () => {
                         </div>
 
                         {/* Amount */}
-                        <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-5 rounded-lg border border-amber-300">
+                        <div className="bg-gradient-to-r from-blue-100 to-blue-100 p-5 rounded-lg border border-blue-300">
                             <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold mb-1">Amount Paid</p>
                             <p className="text-3xl font-bold text-amber-700">${order.totalAmount}</p>
                         </div>
@@ -49,7 +49,7 @@ const Slip: React.FC = () => {
                         <p className="text-sm text-gray-600 mb-4">Thank you for ordering from Gourmet Bistro!</p>
                         <a 
                             href="/" 
-                            className="inline-block bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300"
+                            className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-700 transition-all duration-300"
                         >
                             Back to Home
                         </a>
